@@ -19,15 +19,7 @@ class TelegramBot{
 
     }
 
-<<<<<<< HEAD
-    public function getUpdates($offset="",$limit="",$timeout=""){
-        return $this->sendRequest(
-            "get",
-            $this->baseUrl."getUpdates?offset=$offset&limit=$limit&timeout=$timeout"
-        );
-    }
-=======
->>>>>>> master
+
     public function SendMessage($chat_id, $text){
         return $this->sendRequest(
             "get",
@@ -48,5 +40,10 @@ class TelegramBot{
             ]
         ]);
     }
-
+    public function getUpdates($offset="",$limit="",$timeout=""){
+        return $this->sendRequest(
+            "get",
+            $this->baseUrl."getUpdates?offset=$offset&limit=$limit&timeout=$timeout"
+        );
+    }
 }
