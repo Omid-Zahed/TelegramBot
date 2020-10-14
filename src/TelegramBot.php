@@ -20,13 +20,13 @@ class TelegramBot{
     }
 
 
-    public function SendMessage($chat_id, $text){
+    public function sendMessage($chat_id, $text){
         return $this->sendRequest(
             "get",
             $this->baseUrl."sendMessage?chat_id=$chat_id&text=$text"
         );
     }
-    public function SendDocument($filePath, $chat_id, $mood="r"){
+    public function sendDocument($filePath, $chat_id, $mood="r"){
        return $this->sendRequest('POST', $this->baseUrl . "sendDocument", [
             'multipart' => [
                 [
