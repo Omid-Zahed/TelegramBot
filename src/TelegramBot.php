@@ -46,6 +46,12 @@ class TelegramBot{
             $this->baseUrl."getUpdates?offset=$offset&limit=$limit&timeout=$timeout"
         );
     }
+    public function getMe(){
+        return $this->sendRequest(
+            "get",
+            $this->baseUrl."getMe"
+        );
+    }
     public function sendSticker($chat_id,$sticker_id,$disable_notification=false,$reply_to_message_id=null,$reply_markup=null)
     {
         $query=[];
