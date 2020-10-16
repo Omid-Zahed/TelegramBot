@@ -66,4 +66,21 @@ class TelegramBot{
 
 
     }
+    public function sendVenue($chat_id,$latitude,$longitude,$title,$address){
+        $query=[
+            "chat_id"=>$chat_id,
+            "latitude"=>$latitude,
+            "longitude"=>$longitude,
+            "title"=>$title,
+            "address"=>$address
+        ];
+
+        $query=http_build_query($query);
+        $url=$this->baseUrl."sendVenue?".$query;
+
+    return   $this->sendRequest("GET",$url );
+
+
+    }
+
 }
